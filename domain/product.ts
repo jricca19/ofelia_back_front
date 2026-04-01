@@ -7,7 +7,7 @@ export interface Product {
   price: number;
   currency: string;
   status: ProductStatus;
-  attributes: Record<string, any>;
+  attributes: Record<string, unknown>;
   created_at: string;
   updated_at: string;
 }
