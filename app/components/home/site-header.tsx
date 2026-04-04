@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { NAV_LINKS } from "@/app/components/home/nav-links";
 
 type SiteHeaderProps = {
@@ -14,21 +15,30 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-40 border-b border-[#ffffff80] bg-[#f8e6c8]/85 backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
-        <a href="#inicio" className="font-serif text-3xl tracking-wide text-[#232323]">
-          OFELIA F.
-        </a>
+        <div className="flex items-center gap-8">
+          <a href="#inicio" className="inline-flex items-center font-serif text-3xl tracking-wide text-[#232323]">
+            <Image
+              src="/logo-ofelia.png"
+              alt="Ofelia Antigüedades."
+              width={200}
+              height={200}
+              className="h-20 w-35 rounded-md border border-[#d7b6a7] object-cover"
+            />
+            <span className="sr-only">OFELIA ANTIQUEDADES</span>
+          </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium tracking-wide text-[#2b2b2b] transition hover:text-[#b87682]"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+          <nav className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium tracking-wide text-[#2b2b2b] transition hover:text-[#b87682]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
 
         <button
           type="button"
