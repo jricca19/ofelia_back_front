@@ -44,7 +44,6 @@ app/
       site-footer.tsx
       site-header.tsx
   data/
-    collection-items.ts
   globals.css
   layout.tsx
   page.tsx

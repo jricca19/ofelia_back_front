@@ -1,11 +1,20 @@
 import { productRepository } from "@/infrastructure/product-repository";
-import { Product } from "@/domain/product";
+import { isProductStatus, Product } from "@/domain/product";
 import { ProductRow } from "@/types/product";
+
+function parseStatus(value: string): Product["status"] {
+  if (isProductStatus(value)) {
+    return value;
+  }
+
+  throw new Error(`Invalid product status: ${value}`);
+}
 
 function mapToDomain(row: ProductRow): Product {
   return {
     ...row,
-    status: row.status as Product["status"],
+    status: parseStatus(row.status),
+    cover_image_url: row.cover_image_url ?? undefined,
     description: row.description ?? undefined,
   };
 }

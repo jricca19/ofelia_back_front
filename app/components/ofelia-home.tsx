@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { collectionItems } from "@/app/data/collection-items";
 import { CollectionSection } from "@/app/components/collection-section";
 import { SiteHeader } from "@/app/components/home/site-header";
 import { HeroSection } from "@/app/components/home/hero-section";
@@ -9,8 +8,13 @@ import { HistorySection } from "@/app/components/home/history-section";
 import { ContactSection } from "@/app/components/home/contact-section";
 import { SiteFooter } from "@/app/components/home/site-footer";
 import { AvailabilityModal } from "@/app/components/home/availability-modal";
+import type { Product } from "@/domain/product";
 
-export function OfeliaHome() {
+type OfeliaHomeProps = {
+  products: Product[];
+};
+
+export function OfeliaHome({ products }: OfeliaHomeProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedObject, setSelectedObject] = useState("");
@@ -58,7 +62,7 @@ export function OfeliaHome() {
         <HeroSection />
 
         <CollectionSection
-          items={collectionItems}
+          items={products}
           onRequestAvailability={handleRequestAvailability}
         />
 
