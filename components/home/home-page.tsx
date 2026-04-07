@@ -1,20 +1,20 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CollectionSection } from "@/app/components/collection-section";
-import { SiteHeader } from "@/app/components/home/site-header";
-import { HeroSection } from "@/app/components/home/hero-section";
-import { HistorySection } from "@/app/components/home/history-section";
-import { ContactSection } from "@/app/components/home/contact-section";
-import { SiteFooter } from "@/app/components/home/site-footer";
-import { AvailabilityModal } from "@/app/components/home/availability-modal";
+import { CollectionSection } from "@/components/home/sections/collection-section";
+import { SiteHeader } from "@/components/home/sections/site-header";
+import { HeroSection } from "@/components/home/sections/hero-section";
+import { HistorySection } from "@/components/home/sections/history-section";
+import { ContactSection } from "@/components/home/sections/contact-section";
+import { SiteFooter } from "@/components/home/sections/site-footer";
+import { AvailabilityModal } from "@/components/home/ui/availability-modal";
 import type { Product } from "@/domain/product";
 
-type OfeliaHomeProps = {
+type HomePageProps = {
   products: Product[];
 };
 
-export function OfeliaHome({ products }: OfeliaHomeProps) {
+export function HomePage({ products }: HomePageProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedObject, setSelectedObject] = useState("");

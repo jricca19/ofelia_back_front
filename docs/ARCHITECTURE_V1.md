@@ -10,8 +10,7 @@
 
 Use aliases from `tsconfig.json` and avoid `@/app/...` imports.
 
-- `@/components/*` -> `app/components/*`
-- `@/data/*` -> `app/data/*`
+- `@/components/*` -> `components/*`
 - `@/domain/*` -> `domain/*`
 - `@/application/*` -> `application/*`
 - `@/infrastructure/*` -> `infrastructure/*`
@@ -32,21 +31,24 @@ app/
       route.ts
       [id]/
         route.ts
-  components/
-    collection-section.tsx
-    ofelia-home.tsx
-    home/
-      availability-modal.tsx
+  favicon.ico
+  globals.css
+  layout.tsx
+  page.tsx
+
+components/
+  home/
+    home-page.tsx
+    sections/
+      collection-section.tsx
       contact-section.tsx
       hero-section.tsx
       history-section.tsx
       nav-links.ts
       site-footer.tsx
       site-header.tsx
-  data/
-  globals.css
-  layout.tsx
-  page.tsx
+    ui/
+      availability-modal.tsx
 
 domain/
   product.ts
@@ -56,9 +58,9 @@ application/
 
 infrastructure/
   product-repository.ts
+  supabase-client.ts
 
 lib/
-  supabase.ts
 
 types/
   collection-item.ts
@@ -69,15 +71,15 @@ docs/
 ```
 
 ## Component Responsibility
-- `ofelia-home.tsx`: page orchestrator and local UI state.
-- `home/*`: presentation blocks by section.
-- `collection-section.tsx`: reusable collection grid block.
+- `home-page.tsx`: page orchestrator and local UI state.
+- `home/sections/*`: presentation blocks by section.
+- `home/ui/*`: UI elements scoped to Home (reusable within Home).
 
 ## Performance Baseline
 - Prefer `next/image` for all content images.
 - Configure external image hosts in `next.config.ts` (`images.remotePatterns`).
 
 ## Evolution Path (When Needed)
-1. Move static data from `app/data` to API/CMS.
+1. Move static data from local fixtures to API/CMS.
 2. Add route groups in App Router: `app/(marketing)` and `app/(catalog)`.
 3. Add server actions or dedicated services under `application/` for forms.

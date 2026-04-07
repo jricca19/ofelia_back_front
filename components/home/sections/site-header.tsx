@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV_LINKS } from "@/app/components/home/nav-links";
+import { NAV_LINKS } from "@/components/home/sections/nav-links";
 
 type SiteHeaderProps = {
   isMenuOpen: boolean;
