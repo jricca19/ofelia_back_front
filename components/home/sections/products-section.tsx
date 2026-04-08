@@ -28,6 +28,13 @@ export function ProductsSection({
   items,
   onRequestAvailability,
 }: ProductsSectionProps) {
+  const gridClassName =
+    items.length === 1
+      ? "grid grid-cols-1 gap-6"
+      : items.length === 2
+        ? "grid grid-cols-1 gap-6 md:grid-cols-2"
+        : "grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8";
+
   return (
     <section id="productos" className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
       <div className="section-reveal mb-12 text-center">
@@ -65,12 +72,11 @@ export function ProductsSection({
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+        <div className={gridClassName}>
           {items.map((item, index) => {
             const estilo = readAttributeAsString(item.attributes, "estilo");
             const anio = readAttributeAsString(item.attributes, "anio");
-            const material =
-              readAttributeAsString(item.attributes, "material") || "Material no especificado";
+            const material = readAttributeAsString(item.attributes, "material") || "Material no especificado";
             const resumen = [estilo, anio].filter(Boolean).join(" · ") || "Sin datos históricos";
 
             return (
@@ -83,7 +89,7 @@ export function ProductsSection({
                   <Image
                     src={item.cover_image_url ?? FALLBACK_IMAGE_URL}
                     alt={item.title}
-                    fill
+                    fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition duration-500 ease-out group-hover:scale-105"
                     loading="lazy"
@@ -92,11 +98,11 @@ export function ProductsSection({
                 </div>
 
                 <div className="space-y-2 px-4 py-4 text-left">
-                  <h3 className="font-serif text-[1.05rem] text-[#232323]">{item.title}</h3>
+                  <h3 className="truncate font-serif text-[1.05rem] text-[#232323]">{item.title}</h3>
                   <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#9b787d]">
                     {resumen}
                   </p>
-                  <p className="text-[0.78rem] leading-5 text-[#666060]">
+                  <p className="truncate text-[0.78rem] leading-5 text-[#666060]">
                     {material} · {item.description ?? "Sin descripción"}
                   </p>
                   <button
