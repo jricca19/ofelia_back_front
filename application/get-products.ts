@@ -1,6 +1,6 @@
-import { productRepository } from "@/infrastructure/product-repository";
+import { productRepository } from "@/infrastructure/products/product-repository";
 import { isProductStatus, Product } from "@/domain/product";
-import { ProductRow } from "@/types/product";
+import { ProductRow } from "@/infrastructure/products/product-row";
 
 function parseStatus(value: string): Product["status"] {
   if (isProductStatus(value)) {
