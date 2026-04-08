@@ -40,7 +40,7 @@ components/
   home/
     home-page.tsx
     sections/
-      collection-section.tsx
+      products-section.tsx
       contact-section.tsx
       hero-section.tsx
       history-section.tsx
@@ -63,7 +63,6 @@ infrastructure/
 lib/
 
 types/
-  collection-item.ts
   product.ts
 
 docs/

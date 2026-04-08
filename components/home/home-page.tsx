@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CollectionSection } from "@/components/home/sections/collection-section";
+import { ProductsSection } from "@/components/home/sections/products-section";
 import { SiteHeader } from "@/components/home/sections/site-header";
 import { HeroSection } from "@/components/home/sections/hero-section";
 import { HistorySection } from "@/components/home/sections/history-section";
@@ -61,7 +61,7 @@ export function HomePage({ products }: HomePageProps) {
       <main id="inicio" className="flex-1">
         <HeroSection />
 
-        <CollectionSection
+        <ProductsSection
           items={products}
           onRequestAvailability={handleRequestAvailability}
         />

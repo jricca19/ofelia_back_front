@@ -17,17 +17,17 @@ function readAttributeAsString(attributes: Record<string, unknown>, key: string)
   return "";
 }
 
-type CollectionSectionProps = {
+type ProductsSectionProps = {
   items: Product[];
   onRequestAvailability: (itemName: string) => void;
 };
 
-export function CollectionSection({
+export function ProductsSection({
   items,
   onRequestAvailability,
-}: CollectionSectionProps) {
+}: ProductsSectionProps) {
   return (
-    <section id="coleccion" className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
+    <section id="productos" className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
       <div className="section-reveal mb-12 text-center">
         <p className="text-[0.72rem] tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Colección</p>
         <h2 className="mt-3 font-serif text-4xl text-[#232323] md:text-5xl">Piezas Únicas</h2>
