@@ -1,5 +1,7 @@
-import { OfeliaHome } from "@/app/components/ofelia-home";
+import { HomePage } from "@/components/home/home-page";
+import { getProducts } from "@/application/get-products";
 
-export default function Home() {
-  return <OfeliaHome />;
+export default async function Home() {
+  const products = await getProducts();
+  return <HomePage products={products} />;
 }

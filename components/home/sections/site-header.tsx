@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV_LINKS } from "@/app/components/home/nav-links";
+import { NAV_LINKS } from "@/components/home/sections/nav-links";
 
 type SiteHeaderProps = {
   isMenuOpen: boolean;
@@ -13,7 +13,7 @@ export function SiteHeader({
   onCloseMenu,
 }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-40 border-b border-[#ffffff80] bg-[#f8e6c8]/85 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-background/85 shadow-[0_5px_6px_rgba(35,35,35,0.30)] backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
         <div className="flex items-center gap-8">
           <a href="#inicio" className="inline-flex items-center font-serif text-3xl tracking-wide text-[#232323]">

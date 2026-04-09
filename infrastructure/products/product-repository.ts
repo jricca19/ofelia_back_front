@@ -1,5 +1,5 @@
-import { supabase } from "@/lib/supabase";
-import { ProductRow } from "@/types/product";
+import { supabase } from "@/infrastructure/supabase/supabase-client";
+import { ProductRow } from "@/infrastructure/products/product-row";
 
 export const productRepository = {
   async findAll(): Promise<ProductRow[]> {
