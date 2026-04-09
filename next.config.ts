@@ -1,15 +1,22 @@
 import type { NextConfig } from "next";
 
+const isPreviewEnv = process.env.VERCEL_ENV === "preview";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${isPreviewEnv ? " https://vercel.live" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' https: data:",
   "font-src 'self' https: data:",
   "connect-src 'self' https:",
+  "frame-src 'self' https://maps.google.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",
+  "object-src 'none'",
+  "manifest-src 'self'",
+  "upgrade-insecure-requests",
+  "block-all-mixed-content",
 ].join("; ");
 
 const baseSecurityHeaders = [
