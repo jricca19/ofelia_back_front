@@ -42,7 +42,7 @@ export function HeroSection() {
               </h2>
               <div className="pt-2">
                 <a
-                  href="#coleccion"
+                  href="#productos"
                   className="animate-fade-in-up inline-flex items-center justify-center rounded-full bg-[#b87682] px-7 py-3 text-[0.72rem] font-semibold tracking-[0.22em] text-[#f8e6c8] transition hover:bg-[#a66773]"
                   style={{ animationDelay: "0.45s" }}
                 >
