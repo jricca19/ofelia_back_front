@@ -9,7 +9,7 @@ const contentSecurityPolicy = [
   "img-src 'self' https: data:",
   "font-src 'self' https: data:",
   "connect-src 'self' https:",
-  "frame-src 'self' https://maps.google.com",
+  "frame-src 'self' https://maps.google.com https://www.google.com https://vercel.live",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",
