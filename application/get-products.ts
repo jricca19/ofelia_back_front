@@ -19,23 +19,7 @@ function mapToDomain(row: ProductRow): Product {
   };
 }
 
-type GetProductsOptions = {
-  fallback?: Product[];
-  throwOnError?: boolean;
-};
-
-export async function getProducts(options: GetProductsOptions = {}): Promise<Product[]> {
-  const { fallback = [], throwOnError = true } = options;
-
-  try {
-    const rows = await productRepository.findAll();
-    return rows.map(mapToDomain);
-  } catch (error) {
-    if (throwOnError) {
-      throw error;
-    }
-
-    console.error("Failed to load products.", error);
-    return fallback;
-  }
+export async function getProducts(): Promise<Product[]> {
+  const rows = await productRepository.findAll();
+  return rows.map(mapToDomain);
 }
