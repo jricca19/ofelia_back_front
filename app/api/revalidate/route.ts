@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET_TOKEN;
+const ALLOWED_PATHS = ["/"];
 
 async function handleRevalidate(request: NextRequest) {
   if (!REVALIDATE_SECRET) {
@@ -17,6 +18,13 @@ async function handleRevalidate(request: NextRequest) {
   }
 
   const path = request.nextUrl.searchParams.get("path");
+
+  if (!ALLOWED_PATHS.includes(path || "")) {
+    return NextResponse.json(
+      { success: false, message: "Invalid path." },
+      { status: 400 }
+    );
+  }
 
   if (!path) {
     return NextResponse.json(
