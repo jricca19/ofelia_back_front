@@ -2,9 +2,9 @@ export function HistorySection() {
   return (
     <section id="historia" className="bg-[#f7ead8] px-6 py-24 lg:px-12">
       <div className="section-reveal mx-auto w-full max-w-3xl text-center">
-        <p className="text-[0.72rem] tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Historia</p>
+        <p className="text-sm tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Historia</p>
         <h2 className="mt-3 font-serif text-4xl text-[#232323] md:text-5xl">Historia & Filosofía</h2>
-        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-sm leading-7 text-[#5a5252] md:text-base md:leading-8">
+        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-7 text-[#5a5252] md:text-lg md:leading-8">
           <p>
             Soy Ofelia F. y desde Uruguay selecciono antigüedades que conservan su
             autenticidad material y su valor cultural. Cada pieza se evalúa por su
