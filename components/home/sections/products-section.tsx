@@ -36,11 +36,12 @@ export function ProductsSection({
         : "grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8";
 
   return (
-    <section id="productos" className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
+    <section id="productos" className="bg-[#f7ead8] px-6 py-24 lg:px-12">
       <div className="section-reveal mb-12 text-center">
-        <p className="text-[0.72rem] tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Colección</p>
+        <p className="text-sm tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Colección</p>
         <h2 className="mt-3 font-serif text-4xl text-[#232323] md:text-5xl">Piezas Únicas</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5a5252] md:text-base">
+        <div className="mx-auto mt-4 h-px w-16 bg-[#c08b93]" />
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5a5252] md:text-lg">
           Selección de mobiliario y objetos singulares con procedencia verificada,
           restauración respetuosa y carácter irrepetible.
         </p>
@@ -51,7 +52,7 @@ export function ProductsSection({
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-[#f7ece0]">
             <Image
               src={EMPTY_STATE_IMAGE_URL}
-              alt="Catálogo en renovación"
+              alt="Catálogo en construcción"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -60,13 +61,13 @@ export function ProductsSection({
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#232323]/20 via-transparent to-transparent" />
           </div>
           <div className="text-left">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-[#9b787d]">
-              Catálogo en renovación
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b787d]">
+              Catálogo en construcción
             </p>
             <h3 className="mt-3 font-serif text-2xl text-[#232323] md:text-3xl">
-              Estamos preparando nuevas incorporaciones.
+              Estamos preparando las nuevas incorporaciones.
             </h3>
-            <p className="mt-4 text-sm leading-7 text-[#5a5252]">
+            <p className="mt-4 text-base leading-7 text-[#5a5252]">
               Si buscas algo especial, cuéntanos y te ayudamos a encontrar la pieza adecuada.
             </p>
           </div>
@@ -99,16 +100,16 @@ export function ProductsSection({
 
                 <div className="space-y-2 px-4 py-4 text-left">
                   <h3 className="truncate font-serif text-[1.05rem] text-[#232323]">{item.title}</h3>
-                  <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#9b787d]">
+                  <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#9b787d]">
                     {resumen}
                   </p>
-                  <p className="truncate text-[0.78rem] leading-5 text-[#666060]">
+                  <p className="truncate text-sm leading-6 text-[#666060]">
                     {material} · {item.description ?? "Sin descripción"}
                   </p>
                   <button
                     type="button"
                     onClick={() => onRequestAvailability(item.title)}
-                    className="mt-3 w-full rounded-sm border border-[#b87682] bg-[#b87682] px-4 py-2.5 text-[0.7rem] font-semibold tracking-[0.18em] text-[#f8e6c8] transition hover:bg-[#a66773]"
+                    className="mt-3 w-full rounded-sm border border-[#b87682] bg-[#b87682] px-4 py-2.5 text-sm font-semibold tracking-[0.18em] text-[#f8e6c8] transition hover:bg-[#a66773]"
                   >
                     Consultar Disponibilidad
                   </button>

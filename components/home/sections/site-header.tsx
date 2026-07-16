@@ -32,7 +32,7 @@ export function SiteHeader({
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium tracking-wide text-[#2b2b2b] transition hover:text-[#b87682]"
+                className="text-base font-medium tracking-wide text-[#2b2b2b] transition hover:text-[#b87682]"
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export function SiteHeader({
                 key={link.href}
                 href={link.href}
                 onClick={onCloseMenu}
-                className="rounded-lg px-2 py-2 text-sm font-medium tracking-wide text-[#2b2b2b] hover:bg-[#f5d7c0]"
+                className="rounded-lg px-2 py-3 text-base font-medium tracking-wide text-[#2b2b2b] hover:bg-[#f5d7c0]"
               >
                 {link.label}
               </a>
