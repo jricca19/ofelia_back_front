@@ -36,10 +36,11 @@ export function ProductsSection({
         : "grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8";
 
   return (
-    <section id="productos" className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-12">
+    <section id="productos" className="bg-[#f7ead8] px-6 py-24 lg:px-12">
       <div className="section-reveal mb-12 text-center">
         <p className="text-sm tracking-[0.28em] text-[#9b787d] uppercase">Nuestra Colección</p>
         <h2 className="mt-3 font-serif text-4xl text-[#232323] md:text-5xl">Piezas Únicas</h2>
+        <div className="mx-auto mt-4 h-px w-16 bg-[#c08b93]" />
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5a5252] md:text-lg">
           Selección de mobiliario y objetos singulares con procedencia verificada,
           restauración respetuosa y carácter irrepetible.
@@ -51,7 +52,7 @@ export function ProductsSection({
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-[#f7ece0]">
             <Image
               src={EMPTY_STATE_IMAGE_URL}
-              alt="Catálogo en renovación"
+              alt="Catálogo en construcción"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -61,10 +62,10 @@ export function ProductsSection({
           </div>
           <div className="text-left">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b787d]">
-              Catálogo en renovación
+              Catálogo en construcción
             </p>
             <h3 className="mt-3 font-serif text-2xl text-[#232323] md:text-3xl">
-              Estamos preparando nuevas incorporaciones.
+              Estamos preparando las nuevas incorporaciones.
             </h3>
             <p className="mt-4 text-base leading-7 text-[#5a5252]">
               Si buscas algo especial, cuéntanos y te ayudamos a encontrar la pieza adecuada.

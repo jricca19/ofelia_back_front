@@ -6,7 +6,7 @@ export function HeroSection() {
       <div className="section-reveal relative h-[72vh] min-h-[560px] w-full overflow-hidden lg:h-[78vh]">
         <figure className="absolute inset-0">
           <Image
-            src="/hero-background.jpg"
+            src="/hero-background.webp"
             alt="Ambiente cálido con mobiliario antiguo"
             fill
             priority
