@@ -25,6 +25,14 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
+  const { data: isAdmin, error: roleError } = await supabase.rpc("is_admin");
+
+  if (roleError || isAdmin !== true) {
+    const loginUrl = new URL("/admin/login", request.url);
+    loginUrl.searchParams.set("error", "unauthorized");
+    return NextResponse.redirect(loginUrl);
+  }
+
   return NextResponse.next();
 }
 
