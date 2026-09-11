@@ -6,10 +6,6 @@ import { createSupabaseServerClient } from "@/infrastructure/supabase/supabase-s
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname === "/admin/login") {
-    return NextResponse.next();
-  }
-
   if (!pathname.startsWith("/admin")) {
     return NextResponse.next();
   }
@@ -19,6 +15,18 @@ export async function proxy(request: NextRequest) {
     data: { user },
     error,
   } = await supabase.auth.getUser();
+
+  if (pathname === "/admin/login") {
+    if (!error && user) {
+      const { data: isAdmin } = await supabase.rpc("is_admin");
+
+      if (isAdmin === true) {
+        return NextResponse.redirect(new URL("/admin", request.url));
+      }
+    }
+
+    return NextResponse.next();
+  }
 
   if (error || !user) {
     const loginUrl = new URL("/admin/login", request.url);
